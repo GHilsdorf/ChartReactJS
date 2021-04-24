@@ -14,14 +14,7 @@ export default function App() {
 
   useEffect(() => {
 
-//TODO fetch
-
-    setRawData([
-{"id":1,"birthday":1,"spend":0,"region":"UNITED_STATES"},
-{"id":2,"birthday":2,"spend":500,"region":"UNITED_STATES"},
-{"id":3,"birthday":3,"spend":3000,"region":"EUROPE"},
-{"id":4,"birthday":5,"spend":5000,"region":"APAC"},
-    ]);
+    fetch('http://localhost:8080/getUsers').then(response => response.json()).then(data => setRawData(data));
 
   }, [])
 
